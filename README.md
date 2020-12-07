@@ -40,3 +40,21 @@ done
 
 
 Note: The  `--genomeLoad  LoadAndKeep` option will save the built genome into memory allowing for faster alignment
+
+
+
+
+RNAseq_data
+
+gzip -d AADN05.fasta.gz 
+tar -xzvf AADN05.fasta.gz
+
+STAR --genomeDir /home/toxicaavenger/Documentos/kim/Gallus_gallus/ --runThreadN 16 --readFilesIn /home/toxicaavenger/Documentos/kim/LHMHC09_1.fq.gz --outFileNamePrefix "RNAseq_data" 
+
+STAR --runMode genomeGenerate --genomeDir Gallus_gallus --genomeFastaFiles LHMHC09_1.fq.gz --runThreadN 16 
+
+#convertir archivos a.fq > .fasta 
+
+seqtk seq -a LHMHC09_1.fq > LHMHC09_1.fasta
+
+--readFilesIn /home/toxicaavenger/Documentos/kim--genomeFastaFiles --outFileNamePrefix "RNAseq_data" 
