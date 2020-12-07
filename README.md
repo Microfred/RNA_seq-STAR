@@ -1,14 +1,13 @@
 # RNA_seq-STAR
-###Download STAR###
+## Download STAR
 Obtain STAR source from https://github.com/alexdobin/STAR
-
+clone with  `git clone`
 
 Add the following to your .bashrc file and source it:
 `export PATH=/path/to/STAR/bin/:$PATH`
 
-
-
-###Generate Reference Genome
+## Step 1
+* Generate Reference Genome
 Before using STAR, a reference genome must be built using STAR's `genomeGenerate` mode. This requires a genome fasta file and GTF/GFF reference annotation. This can be achieved with the following command:
 
 ```
@@ -18,7 +17,8 @@ STAR --runThreadN {number of cores} --runMode genomeGenerate --genomeDir /path/t
 Note: the `--sjdbOverhang` is dependent on your read length of your fastq files. 100 is the default value and said to work well in most cases.
 
 
-### STAR Alignment ###
+## Step 2
+* STAR Alignment
 After you have built a genome for STAR, you can proceed to align single-end or paired-end fastq files to this reference using the following command:
 
 ```
